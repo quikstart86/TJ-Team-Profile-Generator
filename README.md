@@ -21,51 +21,76 @@ The task is to take given starter code and convert it into a working `Node.js co
 The application can be invoked by using the following command:
 
 ```bash
-`node index.js` and carry out test using `npm run test`
+node index.js (and carry out tests using): npm run test
 ```
 ## [User-Story](#user-story)
 
 * As a manager a user want to generate a webpage that displays my team's basic info so that a user have quick access to their emails and GitHub profiles.
 
 ## [Acceptance Criteria](#acceptance-criteria)
-* Create a command-line application that accepts user input.
-* When a user is prompted for information about the application repository then a high-quality, professional README.md is generated with:
-  * The title of my project 
-  * Description 
-  * Table of Contents 
-  * Installation 
-  * Usage 
-  * License 
-  * Contributing 
-  * Tests 
-  * Questions
-
-* When a user enters the project title then it is displayed as the title of the README
-* When a user enters a description, installation instructions, usage information, contribution guidelines, and test instructions then this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-* When a user chooses a license for their application from a list of options then a badge for that license is added near the top of the README and a notice is added to the section of the README entitled **License** that explains which license the application is covered under
-* When a user enters their GitHub username then this is added to the section of the README entitled Questions, with a link to their GitHub profile
-* When a user enters their email address then this is added to the section of the README entitled Questions, with instructions on how to reach them with additional questions
-* When a user clicks on the links in the **Table of Contents** then they are taken to the corresponding section of the README
+* Create a command-line application that accepts accepts user input using the provided starter code.   
+* Create classes for each team member provided and export them. The tests for these classes (in the `_tests_` directory) must ALL pass.     
+    * The first class is an `Employee` parent class with the following properties and methods:       
+      * `name`
+      * `id`
+      * `email`
+      * `getName()`
+      * `getId()`
+      * `getEmail()`
+      * `getRole()`&mdash;returns `'Employee'`     
+    * The other three classes will extend `Employee`.      
+    * In addition to `Employee`'s properties and methods, `Manager` will also have the following:
+      * `officeNumber`
+      * `getRole()`&mdash;overridden to return `'Manager'`
+    * In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
+      * `github`&mdash;GitHub username
+      * `getGithub()`
+      * `getRole()`&mdash;overridden to return `'Engineer'`
+    * In addition to `Employee`'s properties and methods, `Intern` will also have the following:
+      * `school`
+      * `getSchool()`
+      * `getRole()`&mdash;overridden to return `'Intern'`
+    * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.   
+  * Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
+    * When a user starts the application then they are prompted to enter the **team manager**’s:
+      * Name
+      * Employee ID
+      * Email address
+      * Office number
+    * When a user enters those requirements then the user is presented with a menu with the option to:
+      * Add an engineer
+      * Add an intern 
+      * Finish building the team
+    * When a user selects the **engineer** option then a user is prompted to enter the following and then the user is taken back to the menu:
+      * Engineer's Name
+      * ID
+      * Email
+      * GitHub username
+    * When a user selects the intern option then a user is prompted to enter the following and then the user is taken back to the menu:
+      * Intern’s name
+      * ID
+      * Email
+      * School
+    * When a user decides to finish building their team then they exit the application, and the HTML is generated.
+  * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
+    * The `render` function will generate and return a block of HTML including templated divs for each employee!
+  * Create an HTML file using the HTML returned from the `render` function. 
+    * Write it to a file named `team.html` in the `output` folder. 
+    * You can use the provided variable `outputPath` to target this location.
 
 ## [Mock-Up](#mock-up)
 
-![portfolio demo](./assets/img/TJ-ReadME%20Generator_%20Feb%206,%202024%2010_11%20PM.gif)
+![App demo](./assets/img/TJ-ReadME%20Generator_%20Feb%206,%202024%2010_11%20PM.gif)
 
-![Generated ReadME](./assets/img/generated%20readme%20screenshot.png)
+![Output file example](./assets/img/generated%20readme%20screenshot.png)
 <br>
-
-![Demo Video Link](./assets/img/qr-code.png)
-
-[Direct Link to screen recording](https://app.screencastify.com/v3/watch/nNN0ORdawxp95D4VCQsE)
 
 [Project Repo](https://github.com/quikstart86/TJ-Readme-Generator)
 
 
 ## [Installation](#installation)
 
-* Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Be sure to create your `.gitignore` file before installing any npm dependencies.
-
-* Make sure that your repo includes a `package.json` with the required dependencies. You can create one by running `npm init` when you first set up the project, before installing any dependencies. Then install 'inquirer' package.
+* Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Install `jest` for tests and `inquirer` for data.
 
 ## [Credits](#credits)
 
@@ -75,10 +100,13 @@ Supplied with starter code by © 2023 edX Boot Camps LLC. and built upon by `Tho
 
 **Support and mentoring from course mentors:**
 <br>
-`Zakariya Hussain`
+[Meg Meyers](https://github.com/femke77)
 
 **Peer Study Group Support:**
+<br>
 Matt Dudman
+<br>
+Georgie Lilington
 
 **Supporting links:** <br>
 N/A
@@ -103,8 +131,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## [Badges](#badges)
 
-![Static Badge](https://img.shields.io/badge/JavaScript_50%25-orange)
-![Static Badge](https://img.shields.io/badge/NODE_50%25-green)
+![Static Badge](https://img.shields.io/badge/JavaScript-orange)
+![Static Badge](https://img.shields.io/badge/NODE-green)
+![Static Badge](https://img.shields.io/badge/Jest-Blue)
+![Static Badge](https://img.shields.io/badge/HTML-Pink)
+![Static Badge](https://img.shields.io/badge/Bootstrap-red)
 
 
 ## [Features](#features)
@@ -114,6 +145,7 @@ N/A
 ## [Contributing](#contributing)
 
 * Matt Dudman
+* Georgie Lilington 
 
 ## [Tests](#tests)
 
