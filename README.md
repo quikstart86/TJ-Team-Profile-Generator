@@ -80,12 +80,12 @@ node index.js (and carry out tests using): npm run test
 
 ## [Mock-Up](#mock-up)
 
-![App demo](./assets/img/TJ-ReadME%20Generator_%20Feb%206,%202024%2010_11%20PM.gif)
-
-![Output file example](./assets/img/generated%20readme%20screenshot.png)
+<img src='./assets/app test.gif' width='30%'>
+<img src='./assets/test screen recording.gif' width='30%'>
 <br>
+<img src='./assets/screenshot.png' width='30%'>
 
-[Project Repo](https://github.com/quikstart86/TJ-Readme-Generator)
+[Project Repo](https://github.com/quikstart86/TJ-Team-Profile-Generator)
 
 
 ## [Installation](#installation)
