@@ -90,7 +90,7 @@ node index.js (and carry out tests using): npm run test
 
 ## [Installation](#installation)
 
-* Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. Install `jest` for tests and `inquirer` for data.
+* Create a `.gitignore` file and include `node_modules/` and `.DS_Store/` so that your `node_modules` directory isn't tracked or uploaded to GitHub. The application uses `Jest` for running unit tests and `Inquirer` for collecting input from the use.
 
 ## [Credits](#credits)
 
